@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — GuideX Consulting | ServiceNow field notes</title>
-<meta name="description" content="Field notes from the GuideX practice — CMDB &amp; CSDM, Now Assist and AI governance, ServiceNow licensing, and fixed-price delivery, written by a Certified Technical Architect.">
+<title>Foundation, Advanced, Prime: reading the new SKU tiering — GuideX Consulting</title>
+<meta name="description" content="Re-packaged tiers change how you buy and where value hides. How to read them entitlement-by-entitlement, and avoid paying for capability you&#x27;ll never switch on.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@ header.scrolled{background:rgba(4,30,54,.82);backdrop-filter:blur(14px);border-b
 .page-head{padding:172px 0 40px;position:relative;overflow:hidden}
 .page-head-dots{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(196,255,97,.14) 1.3px,transparent 1.4px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 85% 10%,#000,transparent 66%);mask-image:radial-gradient(ellipse 80% 90% at 85% 10%,#000,transparent 66%);opacity:.7}
 .page-head .wrap{position:relative;z-index:2}
-.page-head h1{font-size:clamp(34px,3vw,58px);font-weight:700;letter-spacing:-.02em;max-width:18ch}
+.page-head h1{font-size:clamp(34px,5vw,58px);font-weight:700;letter-spacing:-.02em;max-width:18ch}
 .page-head p{color:var(--slate);font-size:clamp(16px,1.6vw,18px);max-width:56ch;margin-top:20px}
 
 /* Blog */
@@ -123,6 +123,54 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:rgba(4,26
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- Article ---------- */
+.article{padding:150px 0 40px}
+.article-head{max-width:820px;margin:0 auto}
+.back{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--slate);display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;transition:color .2s}
+.back:hover{color:var(--lime)}
+.article-head h1{font-size:clamp(30px,3.0vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.08;margin:18px 0 20px}
+.dek{font-size:clamp(17px,2vw,21px);color:var(--fog);line-height:1.5;max-width:60ch}
+.byline{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--slate);letter-spacing:.03em}
+.byline .sep{width:4px;height:4px;border-radius:50%;background:var(--slate-dim)}
+.byline b{color:var(--fog);font-weight:500}
+.article-hero{max-width:960px;margin:40px auto 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line-strong);line-height:0}
+.article-hero svg{display:block;width:100%;height:auto}
+.prose{max-width:720px;margin:12px auto 0;padding:44px 0 0;font-size:17px;line-height:1.78;color:var(--fog)}
+.prose>p{margin:0 0 22px}
+.prose h2{font-size:clamp(22px,2.6vw,28px);color:var(--white);margin:44px 0 16px;letter-spacing:-.01em}
+.prose h3{font-size:19px;color:var(--white);margin:32px 0 12px}
+.prose strong{color:var(--white);font-weight:600}
+.prose ul{margin:0 0 22px;padding-left:0;list-style:none}
+.prose li{position:relative;padding-left:26px;margin-bottom:12px}
+.prose li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.prose a{color:var(--lime);border-bottom:1px solid rgba(196,255,97,.35)}
+.pull{border-left:3px solid var(--lime);padding:4px 0 4px 26px;margin:34px 0;font-family:var(--display);font-weight:500;font-size:clamp(20px,2.4vw,24px);color:var(--white);line-height:1.34}
+.callout{background:var(--lime-soft);border:1px solid rgba(196,255,97,.28);border-radius:14px;padding:22px 26px;margin:30px 0;font-size:15.5px;color:var(--fog)}
+.usecase{background:linear-gradient(150deg,var(--navy) 0%,var(--ink-3) 62%);border:1px solid rgba(196,255,97,.30);border-radius:16px;padding:30px 32px;margin:38px 0}
+.usecase .uc-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:5px 12px;border-radius:100px;font-weight:500}
+.usecase h3{margin:16px 0 12px;font-size:20px}
+.usecase p{color:var(--fog);font-size:15.5px;margin:0}
+.takeaways{border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin:40px 0;background:var(--ink-2)}
+.takeaways h4{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:16px;font-weight:500}
+.takeaways ul{margin:0;padding:0;list-style:none}
+.takeaways li{position:relative;padding-left:26px;margin-bottom:12px;font-size:15.5px}
+.takeaways li:last-child{margin-bottom:0}
+.takeaways li::before{content:"→";position:absolute;left:0;top:0;color:var(--lime)}
+/* Article CTA */
+.article-cta{max-width:820px;margin:56px auto 0;background:linear-gradient(150deg,var(--navy),var(--ink-3));border:1px solid rgba(196,255,97,.28);border-radius:18px;padding:40px 38px;text-align:center}
+.article-cta h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:12px}
+.article-cta p{color:var(--fog);max-width:48ch;margin:0 auto 24px;font-size:16px}
+/* Related */
+.related{max-width:960px;margin:70px auto 100px}
+.related h4{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:22px;font-weight:500}
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:640px){.rel-grid{grid-template-columns:1fr}}
+.rel-card{display:block;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:24px 26px;transition:border-color .3s,transform .3s}
+.rel-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.rel-card .rc-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.rel-card h5{font-family:var(--display);font-size:17px;color:var(--white);font-weight:600;margin:12px 0 0;line-height:1.3}
+@media(max-width:640px){.prose,.article-head,.article-cta{padding-left:2px;padding-right:2px}}
 </style>
 <style id="gx-contact-styles">
 /* ===== GuideX contact modal ===== */
@@ -186,139 +234,57 @@ body.gx-lock{overflow:hidden}
 </header>
 
 <main>
-  <section class="page-head">
-    <div class="page-head-dots"></div>
+  <article class="article">
     <div class="wrap">
-      <span class="eyebrow">GuideX Insights</span>
-      <h1>Field notes from the platform</h1>
-      <p>Practical, opinionated writing on CMDB and CSDM, governed AI, ServiceNow licensing and fixed-price delivery — from the people doing the work, not the sales deck.</p>
-    </div>
-  </section>
+      <div class="article-head">
+        <a class="back" href="blog.html">← All insights</a>
+        <div class="post-meta"><span class="tag">Licensing</span><span class="post-date">Apr 2026 · 6 min read</span></div>
+        <h1>Foundation, Advanced, Prime: reading the new SKU tiering</h1>
+        <p class="dek">Re-packaged tiers change how you buy and where value hides. How to read them entitlement-by-entitlement, and avoid paying for capability you&#x27;ll never switch on.</p>
+        <div class="byline"><b>The GuideX Practice</b><span class="sep"></span><span>Architect-led ServiceNow advisory</span></div>
+      </div>
+      <div class="article-hero"><svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="960" height="300" fill="#0a3157"/><g fill="#C4FF61" opacity=".12"><circle cx="28" cy="26" r="1.8"/><circle cx="48" cy="26" r="1.8"/><circle cx="68" cy="26" r="1.8"/><circle cx="28" cy="46" r="1.8"/><circle cx="48" cy="46" r="1.8"/><circle cx="68" cy="46" r="1.8"/><circle cx="28" cy="66" r="1.8"/><circle cx="48" cy="66" r="1.8"/><circle cx="68" cy="66" r="1.8"/><circle cx="852" cy="214" r="1.8"/><circle cx="872" cy="214" r="1.8"/><circle cx="892" cy="214" r="1.8"/><circle cx="852" cy="234" r="1.8"/><circle cx="872" cy="234" r="1.8"/><circle cx="892" cy="234" r="1.8"/><circle cx="852" cy="254" r="1.8"/><circle cx="872" cy="254" r="1.8"/><circle cx="892" cy="254" r="1.8"/></g><rect x="360" y="196" width="72" height="58" rx="6" fill="#0e3f6b" stroke="rgba(143,163,188,.4)"/><text x="396" y="240" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#D6E3F1" font-weight="600">F</text><rect x="452" y="150" width="72" height="104" rx="6" fill="#0e3f6b" stroke="rgba(143,163,188,.4)"/><text x="488" y="240" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#D6E3F1" font-weight="600">A</text><rect x="544" y="104" width="72" height="150" rx="6" fill="#C4FF61" stroke="rgba(143,163,188,.4)"/><text x="580" y="240" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#062641" font-weight="600">P</text><path d="M330 254 h300" stroke="rgba(143,163,188,.4)" stroke-width="1.5"/></svg></div>
+      <div class="prose"><p>Repackaged tiers — Foundation, Advanced, Prime — change two things at once: how you buy, and where the value hides. The trap is buying the tier <em>name</em> instead of the entitlements underneath it, and pre-paying for capability you'll never switch on.</p>
 
-  <section class="blog">
-    <div class="wrap">
+<h2>Read entitlements, not tier names</h2>
+<p>Tier names are marketing; entitlements are the contract. The same label can mean different things across product lines, and the jump between tiers is rarely linear — sometimes a single capability you need sits one tier up and drags a lot of things you don't need along with it. Map the specific features you will actually operate to the lowest tier that includes them.</p>
 
-      <!-- Featured -->
-      <article class="featured reveal">
-        <div class="f-body">
-          <div class="post-meta"><span class="tag">CMDB</span><span class="post-date">Jun 2026 · 6 min read</span></div>
-          <h2>CMDB health isn't a dashboard number — it's an operating decision</h2>
-          <p>A 39% health score tells you almost nothing on its own. What matters is which classes are wrong, which business services depend on them, and what breaks downstream when they drift. Here's how we turn a health percentage into a costed remediation sequence.</p>
-          <a class="read" href="cmdb-health.html">Read the article <span class="arw">→</span></a>
-        </div>
-        <div class="f-art" aria-hidden="true">
-          <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="320" fill="#0a3157"/>
-            <g fill="#C4FF61" opacity=".12"><circle cx="30" cy="28" r="1.8"/><circle cx="52" cy="28" r="1.8"/><circle cx="30" cy="50" r="1.8"/><circle cx="370" cy="292" r="1.8"/><circle cx="348" cy="292" r="1.8"/><circle cx="370" cy="270" r="1.8"/></g>
-            <circle cx="200" cy="160" r="96" fill="none" stroke="rgba(143,163,188,.2)" stroke-width="14"/>
-            <circle cx="200" cy="160" r="96" fill="none" stroke="#C4FF61" stroke-width="14" stroke-linecap="round" stroke-dasharray="603" stroke-dashoffset="360" transform="rotate(-90 200 160)"/>
-            <g font-family="'IBM Plex Mono',monospace" text-anchor="middle">
-              <text x="200" y="152" fill="#FFFFFF" font-size="46" font-weight="600">39%</text>
-              <text x="200" y="182" fill="#8FA3BC" font-size="13" letter-spacing="2">CI HEALTH</text>
-            </g>
-          </svg>
-        </div>
-      </article>
+<p class="pull">Buy the capability you'll turn on — not the tier that sounds the most complete.</p>
 
-      <!-- Grid -->
-      <div class="posts">
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <g stroke="rgba(196,255,97,.5)" stroke-width="2" fill="none"><path d="M60 40 h120 M60 75 h120 M60 110 h80"/></g>
-            <g fill="#C4FF61"><circle cx="48" cy="40" r="5"/><circle cx="48" cy="75" r="5"/><circle cx="48" cy="110" r="5"/></g>
-            <rect x="210" y="30" width="70" height="90" rx="8" fill="#0e3f6b" stroke="rgba(143,163,188,.4)"/>
-            <path d="M224 62 h42 M224 76 h42 M224 90 h28" stroke="#8FA3BC" stroke-width="3" stroke-linecap="round"/>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">CSDM</span><span class="post-date">Jun 2026 · 5 min</span></div>
-            <h3>CSDM without the theatre: sequencing around real consumption</h3>
-            <p>Most CSDM programs stall because they chase the model instead of the outcome. Anchor service mapping to ITSM, ITOM and SPM consumption and the sequence writes itself.</p>
-            <a class="read" href="csdm-sequencing.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+<h2>Where value hides (and where cost does)</h2>
+<ul>
+<li>The gap between two tiers is where the negotiation lives. Know exactly which one or two capabilities push you up a tier, and whether they're worth the step.</li>
+<li>Bundled capability you never activate is pure cost. Model your real switch-on plan, not the datasheet.</li>
+<li>Platform-wide capabilities — data, integration, AI — often price differently from workflow apps. Treat them as their own line of analysis.</li>
+</ul>
 
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <circle cx="160" cy="75" r="34" fill="#C4FF61"/>
-            <path d="M150 62 q10 -14 20 0 q-10 6 -10 18 M160 92 v6" stroke="#062641" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <g fill="none" stroke="rgba(196,255,97,.5)" stroke-width="2"><circle cx="160" cy="75" r="52" stroke-dasharray="4 6"/></g>
-            <g fill="#C4FF61"><circle cx="212" cy="75" r="4"/><circle cx="108" cy="75" r="4"/><circle cx="160" cy="23" r="4"/></g>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">AI</span><span class="post-date">May 2026 · 7 min</span></div>
-            <h3>Now Assist is easy to switch on. Governing it is the hard part.</h3>
-            <p>Activation takes an afternoon. The work is scoping use cases, setting guardrails and proving handle-time savings before you scale it across ITSM and HRSD.</p>
-            <a class="read" href="now-assist-governance.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+<h3>A simple test for every upgrade on the quote</h3>
+<p>For each tier step, ask three questions: <strong>which named feature forces this step, which team will operate it, and what's the first quarter it delivers value?</strong> If you can't answer all three, you're pre-paying for optionality.</p>
 
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <rect x="120" y="42" width="80" height="66" rx="10" fill="#0e3f6b" stroke="#C4FF61" stroke-opacity=".5"/>
-            <circle cx="160" cy="66" r="10" fill="#C4FF61"/>
-            <path d="M150 96 q10 -16 20 0" fill="none" stroke="#C4FF61" stroke-width="3"/>
-            <g stroke="rgba(143,163,188,.5)" stroke-width="2"><path d="M120 62 h-40 M240 62 h-40 M120 88 h-40 M240 88 h-40"/></g>
-            <g fill="#8FA3BC"><circle cx="72" cy="62" r="5"/><circle cx="248" cy="62" r="5"/><circle cx="72" cy="88" r="5"/><circle cx="248" cy="88" r="5"/></g>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">AI Governance</span><span class="post-date">May 2026 · 5 min</span></div>
-            <h3>The AI Control Tower: what it actually governs</h3>
-            <p>Every skill, every agent, one policy surface. A plain-English tour of what the Control Tower monitors — and why it stops being optional the moment you run more than one agent.</p>
-            <a class="read" href="ai-control-tower.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+<h2>The advisory point</h2>
+<p>This is where an independent architect earns their fee several times over. The vendor's incentive is tier-up; yours is capability-fit. A feature-to-tier mapping done <em>before</em> the renewal conversation changes the negotiation from "which bundle" to "which entitlements, at what price."</p>
 
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <g fill="#0e3f6b" stroke="rgba(143,163,188,.4)"><rect x="70" y="86" width="48" height="34" rx="5"/><rect x="136" y="62" width="48" height="58" rx="5"/></g>
-            <rect x="202" y="38" width="48" height="82" rx="5" fill="#C4FF61"/>
-            <g font-family="'IBM Plex Mono',monospace" font-size="12" fill="#D6E3F1" text-anchor="middle"><text x="94" y="107">F</text><text x="160" y="107">A</text><text x="226" y="107" fill="#062641" font-weight="600">P</text></g>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">Licensing</span><span class="post-date">Apr 2026 · 6 min</span></div>
-            <h3>Foundation, Advanced, Prime: reading the new SKU tiering</h3>
-            <p>ServiceNow's re-packaged tiers change how you buy and where value hides. What each tier really unlocks, and how to avoid paying for capability you'll never turn on.</p>
-            <a class="read" href="sku-tiering.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+<div class="callout"><strong>One caveat:</strong> tier contents and packaging change between releases. Treat the specific entitlements in any tier as something to verify against your current order form, not assume — the discipline below holds regardless of what the tiers are called this quarter.</div>
 
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <path d="M60 108 L120 88 L172 96 L224 60 L268 44" fill="none" stroke="#C4FF61" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <g fill="#C4FF61"><circle cx="60" cy="108" r="4.5"/><circle cx="120" cy="88" r="4.5"/><circle cx="172" cy="96" r="4.5"/><circle cx="224" cy="60" r="4.5"/><circle cx="268" cy="44" r="4.5"/></g>
-            <path d="M52 122 h224" stroke="rgba(143,163,188,.4)" stroke-width="1.5"/>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">Delivery</span><span class="post-date">Apr 2026 · 4 min</span></div>
-            <h3>How we actually carry fixed-price delivery risk</h3>
-            <p>Fixed price only works if the scope, milestones and acceptance are engineered up front. A look inside how we structure engagements so the risk sits with us, not you.</p>
-            <a class="read" href="fixed-price-delivery.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+<div class="takeaways"><h4>What to take away</h4><ul>
+<li>Tier names are marketing; map to specific entitlements.</li>
+<li>Find the one or two features that force each tier step.</li>
+<li>Model your real activation plan, not the datasheet.</li>
+<li>Do the feature-to-tier mapping before you're in the renewal.</li>
+</ul></div></div>
 
-        <article class="post reveal">
-          <div class="p-art" aria-hidden="true"><svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <rect width="320" height="150" fill="#0a3157"/>
-            <circle cx="160" cy="75" r="12" fill="#C4FF61"/>
-            <g fill="none" stroke="rgba(196,255,97,.45)" stroke-width="1.5"><circle cx="160" cy="75" r="34"/><circle cx="160" cy="75" r="56"/></g>
-            <g fill="#8FA3BC"><circle cx="194" cy="75" r="4"/><circle cx="126" cy="75" r="4"/><circle cx="160" cy="41" r="4"/><circle cx="160" cy="109" r="4"/><circle cx="216" cy="45" r="3"/><circle cx="104" cy="105" r="3"/></g>
-          </svg></div>
-          <div class="p-body">
-            <div class="post-meta"><span class="tag ghost">ITOM</span><span class="post-date">Mar 2026 · 5 min</span></div>
-            <h3>Discovery that doesn't drown your CMDB in noise</h3>
-            <p>Scan everything and you get everything — including the junk. How to scope Discovery and IRE rules so what lands in the CMDB is signal you can trust.</p>
-            <a class="read" href="discovery-noise.html">Read <span class="arw">→</span></a>
-          </div>
-        </article>
+      <div class="article-cta">
+        <h3>Facing this on your platform?</h3>
+        <p>If any of the above sounds like your environment, a short conversation with a Certified Technical Architect will tell you more than another vendor demo.</p>
+        <a class="btn btn-primary" href="mailto:info@guidexconsulting.com">Contact Us <span class="arw">→</span></a>
       </div>
 
+      <div class="related">
+        <h4>More field notes</h4>
+        <div class="rel-grid"><a class="rel-card" href="fixed-price-delivery.html"><span class="rc-tag">Delivery</span><h5>How we actually carry fixed-price delivery risk</h5></a><a class="rel-card" href="discovery-noise.html"><span class="rc-tag">ITOM</span><h5>Discovery that doesn&#x27;t drown your CMDB in noise</h5></a></div>
+      </div>
     </div>
-  </section>
+  </article>
 </main>
 
 <footer>
@@ -350,10 +316,10 @@ body.gx-lock{overflow:hidden}
         </div>
         <div class="foot-col">
           <h5>Topics</h5>
-          <a href="cmdb-health.html">CMDB &amp; CSDM</a>
-          <a href="ai-control-tower.html">Governed AI</a>
-          <a href="sku-tiering.html">Licensing</a>
-          <a href="fixed-price-delivery.html">Delivery</a>
+          <a href="#">CMDB &amp; CSDM</a>
+          <a href="#">Governed AI</a>
+          <a href="#">Licensing</a>
+          <a href="#">Delivery</a>
         </div>
         <div class="foot-col">
           <h5>Contact</h5>
