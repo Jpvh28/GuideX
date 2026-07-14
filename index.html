@@ -38,7 +38,7 @@ body{
     radial-gradient(1100px 720px at 84% -8%, rgba(7,63,115,.55) 0%, transparent 60%),
     radial-gradient(820px 620px at 2% 6%, rgba(196,255,97,.05) 0%, transparent 55%),
     radial-gradient(1000px 900px at 50% 112%, rgba(7,63,115,.35) 0%, transparent 60%),
-    linear-gradient(178deg,#03162a 0%,#041E36 34%,#05243f 68%,#03182e 100%);
+    linear-gradient(178deg,#03162a 0%,#000 34%,#000 68%,#000 100%);
   background-attachment:fixed;
   color:var(--fog);
   line-height:1.6;
@@ -138,7 +138,7 @@ header.scrolled{background:rgba(4,30,54,.82);backdrop-filter:blur(14px);border-b
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .hero-visual{max-width:440px;margin-top:6px}
 }
-.hero h1{font-size:clamp(38px,6.3vw,74px);font-weight:700;letter-spacing:-.025em;line-height:1.04}
+.hero h1{font-size:clamp(38px,4.0vw,74px);font-weight:700;letter-spacing:-.025em;line-height:1.04}
 .hero h1 .accent{color:var(--lime)}
 .hero-sub{font-size:clamp(17px,1.9vw,21px);color:var(--fog);max-width:60ch;margin-top:28px;line-height:1.55}
 .hero-actions{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
@@ -392,6 +392,36 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
   .gauge .prog{transition:none}
 }
 </style>
+<style id="gx-contact-styles">
+/* ===== GuideX contact modal ===== */
+.gx-modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:24px}
+.gx-modal.open{display:flex}
+.gx-modal-backdrop{position:absolute;inset:0;background:rgba(2,12,24,.72);backdrop-filter:blur(6px)}
+.gx-modal-card{position:relative;z-index:1;width:100%;max-width:520px;background:linear-gradient(160deg,var(--ink-2) 0%,var(--ink) 72%);border:1px solid var(--line-strong);border-radius:var(--r);padding:34px 34px 30px;box-shadow:0 30px 80px rgba(0,0,0,.55);max-height:92vh;overflow-y:auto;animation:gxpop .3s ease}
+@keyframes gxpop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.gx-modal-card{animation:none}}
+.gx-modal-x{position:absolute;top:15px;right:15px;background:none;border:0;color:var(--slate);font-size:17px;cursor:pointer;line-height:1;padding:7px;border-radius:9px;transition:color .2s,background .2s}
+.gx-modal-x:hover{color:var(--lime);background:rgba(196,255,97,.08)}
+.gx-modal-head{margin-bottom:22px;padding-right:24px}
+.gx-modal-head h3{font-size:clamp(23px,3vw,28px);margin:8px 0 8px}
+.gx-modal-head p{color:var(--slate);font-size:14.5px}
+.gx-form{display:flex;flex-direction:column;gap:16px}
+.gx-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:520px){.gx-row{grid-template-columns:1fr}}
+.gx-field{display:flex;flex-direction:column;gap:7px}
+.gx-field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.gx-field input,.gx-field textarea{font-family:var(--body);font-size:15px;color:var(--white);background:rgba(255,255,255,.04);border:1px solid var(--line-strong);border-radius:12px;padding:12px 14px;transition:border-color .2s,background .2s;width:100%;resize:vertical}
+.gx-field input::placeholder,.gx-field textarea::placeholder{color:var(--slate-dim)}
+.gx-field input:focus,.gx-field textarea:focus{outline:none;border-color:var(--lime);background:rgba(196,255,97,.05)}
+.gx-field input:invalid:not(:placeholder-shown),.gx-field textarea:invalid:not(:placeholder-shown){border-color:rgba(255,120,120,.5)}
+.gx-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.gx-submit{justify-content:center;margin-top:4px;width:100%;border:0}
+.gx-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.gx-status{font-size:13.5px;text-align:center;min-height:18px;margin-top:2px;line-height:1.45}
+.gx-status.ok{color:var(--lime)}
+.gx-status.err{color:#ff9b9b}
+body.gx-lock{overflow:hidden}
+</style>
 </head>
 <body>
 
@@ -418,7 +448,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
       <a href="#capability">Capability</a>
       <a href="#pulse">Platform Pulse</a>
       <a href="blog.html">Blog</a>
-      <a class="btn btn-primary nav-cta" href="mailto:info@guidexconsulting.com.au">Start a conversation</a>
+      <a class="btn btn-primary nav-cta" href="mailto:info@guidexconsulting.com">Contact Us</a>
     </nav>
     <button class="nav-toggle" id="navtoggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -438,7 +468,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
         <h1>Architect-led.<br>Outcome-priced.<br><span class="accent">Enterprise-ready.</span></h1>
         <p class="hero-sub">GuideX is a boutique ServiceNow practice where a Certified Technical Architect designs, governs and delivers every engagement — from first diagnostic to production and handover. No junior hand-offs. No open-ended billing.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:info@guidexconsulting.com.au">Start a conversation <span class="arw">→</span></a>
+          <a class="btn btn-primary" href="mailto:info@guidexconsulting.com">Contact Us <span class="arw">→</span></a>
           <a class="btn btn-ghost" href="#pulse">See the Platform Pulse</a>
         </div>
       </div>
@@ -778,10 +808,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
       <h2>Let's transform your <span class="accent">platform investment.</span></h2>
       <p>Architect-led. Outcome-priced. Enterprise-ready. Start with a Platform Pulse, or bring us the program you need delivered.</p>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="mailto:info@guidexconsulting.com.au?subject=Enquiry%20—%20GuideX%20Consulting">Start a conversation <span class="arw">→</span></a>
+        <a class="btn btn-primary" href="mailto:info@guidexconsulting.com?subject=Enquiry%20—%20GuideX%20Consulting">Contact Us<span class="arw">→</span></a>
         <a class="btn btn-ghost" href="#pulse">Explore the Platform Pulse</a>
       </div>
-      <div class="cta-mail">Or email us directly at <a href="mailto:info@guidexconsulting.com.au">info@guidexconsulting.com.au</a></div>
+      <div class="cta-mail">Or email us directly at <a href="mailto:info@guidexconsulting.com">info@guidexconsulting.com</a></div>
     </div>
   </div>
 </section>
@@ -827,7 +857,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
         </div>
         <div class="foot-col">
           <h5>Contact</h5>
-          <a href="mailto:info@guidexconsulting.com.au">info@guidexconsulting.com.au</a>
+          <a href="mailto:info@guidexconsulting.com">info@guidexconsulting.com</a>
           <a href="#">Melbourne, Victoria</a>
           <a href="#">Australia · New Zealand</a>
         </div>
@@ -876,6 +906,129 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
       go.observe(gauge);
     }
   }
+})();
+</script>
+
+<!-- ===== GuideX contact modal ===== -->
+<div class="gx-modal" id="gxContactModal" aria-hidden="true">
+  <div class="gx-modal-backdrop" data-gx-close></div>
+  <div class="gx-modal-card" role="dialog" aria-modal="true" aria-labelledby="gxModalTitle">
+    <button class="gx-modal-x" type="button" data-gx-close aria-label="Close">&#10005;</button>
+    <div class="gx-modal-head">
+      <span class="eyebrow">Get in touch</span>
+      <h3 id="gxModalTitle">Let&#39;s talk</h3>
+      <p>Tell us a little about what you&#39;re working on and a Certified Technical Architect will get back to you.</p>
+    </div>
+    <form class="gx-form" id="gxContactForm" novalidate>
+      <!-- Web3Forms config: replace the access_key value with your own key from https://web3forms.com -->
+      <input type="hidden" name="access_key" value="92f118f7-e3ad-4d0c-88c3-364470d3e9ad">
+      <input type="hidden" name="subject" value="New website enquiry - GuideX Consulting">
+      <input type="hidden" name="from_name" value="GuideX Consulting website">
+      <!-- spam honeypot (leave empty) -->
+      <input type="checkbox" name="botcheck" class="gx-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="gx-field">
+        <label for="gxName">Name</label>
+        <input id="gxName" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+      </div>
+      <div class="gx-row">
+        <div class="gx-field">
+          <label for="gxPhone">Contact number</label>
+          <input id="gxPhone" name="phone" type="tel" required autocomplete="tel" placeholder="e.g. 04xx xxx xxx">
+        </div>
+        <div class="gx-field">
+          <label for="gxEmail">Email</label>
+          <input id="gxEmail" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+        </div>
+      </div>
+      <div class="gx-field">
+        <label for="gxMsg">How can we help?</label>
+        <textarea id="gxMsg" name="message" rows="4" required placeholder="Briefly describe your query..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary gx-submit">Send enquiry <span class="arw">&#8594;</span></button>
+      <p class="gx-status" id="gxStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ===== GuideX contact modal behaviour ===== */
+(function(){
+  var modal=document.getElementById('gxContactModal');
+  if(!modal){return;}
+  var form=document.getElementById('gxContactForm');
+  var statusEl=document.getElementById('gxStatus');
+  var FALLBACK_EMAIL='info@guidexconsulting.com';
+  var lastFocus=null;
+
+  function openModal(e){
+    if(e){e.preventDefault();}
+    lastFocus=document.activeElement;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('gx-lock');
+    var first=document.getElementById('gxName');
+    if(first){setTimeout(function(){first.focus();},60);}
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('gx-lock');
+    if(lastFocus&&lastFocus.focus){lastFocus.focus();}
+  }
+
+  // Any pill "Contact Us" button that used to be a mailto link now opens the form.
+  document.querySelectorAll('a.btn[href^="mailto:"]').forEach(function(a){
+    a.addEventListener('click',openModal);
+  });
+  modal.querySelectorAll('[data-gx-close]').forEach(function(el){
+    el.addEventListener('click',closeModal);
+  });
+  document.addEventListener('keydown',function(e){
+    if((e.key==='Escape'||e.key==='Esc')&&modal.classList.contains('open')){closeModal();}
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    statusEl.className='gx-status';
+    statusEl.textContent='';
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var btn=form.querySelector('.gx-submit');
+    var label=btn.innerHTML;
+    var key=(form.querySelector('input[name="access_key"]').value||'').trim();
+    if(!key||key.indexOf('YOUR_')===0){
+      statusEl.className='gx-status err';
+      statusEl.textContent='This form is not connected yet. Add your Web3Forms access key to enable sending.';
+      return;
+    }
+    btn.disabled=true;
+    btn.textContent='Sending...';
+    var data=Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    })
+    .then(function(r){return r.json();})
+    .then(function(res){
+      if(res&&res.success){
+        statusEl.className='gx-status ok';
+        statusEl.textContent='Thanks - your enquiry has been sent. We will be in touch shortly.';
+        form.reset();
+        setTimeout(closeModal,2400);
+      }else{
+        statusEl.className='gx-status err';
+        statusEl.textContent=(res&&res.message)?res.message:('Something went wrong. Please email '+FALLBACK_EMAIL+' directly.');
+      }
+    })
+    .catch(function(){
+      statusEl.className='gx-status err';
+      statusEl.textContent='Network error. Please email '+FALLBACK_EMAIL+' directly.';
+    })
+    .finally(function(){
+      btn.disabled=false;
+      btn.innerHTML=label;
+    });
+  });
 })();
 </script>
 </body>
